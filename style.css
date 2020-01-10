@@ -1,0 +1,586 @@
+
+
+body {
+  font-family: 'Red Hat Display', helvetica, arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-family: 'Red Hat Display';
+  color: #f7f7f7;
+}
+
+p {
+  font-size: 1.3em;
+}
+
+/*Navbar CSS has been adapted from the tutorial in this video
+https://www.youtube.com/watch?v=gXkqy0b4M5g */
+
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #352f5e; 
+  align-items: center;
+  min-height: 30px;
+  z-index: 2;
+}
+
+.title {
+  font-family: 'Red Hat Display';
+  font-style: none;
+  color: #f7f7f7;
+  letter-spacing: 5px;
+}
+
+.navbar {
+  
+  display: flex;
+  justify-content: space-around;
+  width: 40%
+  
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.navbar a {
+  font-family: 'Red Hat Display';
+  font-style: none;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #f7f7f7;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #f7f7f7;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+
+/*changes the navbar format for mobile */
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .navbar {
+    position: absolute;
+    margin: 0px;
+    right: 0px;
+    height: 92vh;
+    top: 9vh;
+    background-color: #352f5e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    z-index: 1;
+  }
+  .navbar a {
+    letter-spacing: 5px;
+  }
+  .navbar li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+    transform: translateX(66%);
+  }
+}
+
+.burger-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/*toggles the burger to a vertical line on "click"*/
+.toggle .line1{
+  opacity: 0;
+}
+.toggle .line2{
+  transform: rotate(90deg);
+  width: 30px;
+  height: 1px;
+}
+.toggle .line3{
+  opacity: 0;
+}
+
+
+
+header img {
+  width: 100%;
+  margin: 0;
+}
+
+.navbar-opaque {
+  opacity: 0.9;
+}
+.home {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows:  2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: .5em;
+  background-image: url("https://cdn.glitch.com/27f86ec2-5997-4dd8-80cd-b47451f12b85%2Fandrew-neel-z55CR_d0ayg-unsplash.jpg?v=1574356068241");
+  background-position: center;
+  background-size: cover;
+  z-index: -2;
+}
+
+.call-to-action {
+  display: block;
+  grid-column: 9/13;
+  grid-row: 7/8;
+  color: #f7f7f7;
+  text-align: center;
+  font-size: .8em;
+}
+
+.home button {
+  font-family: 'Ubuntu';
+  text-decoration: bold; 
+  font-size: 1.2em;
+  padding: 10px 20px 10px 20px;
+  margin: auto;
+  box-shadow: 5px 9px 15px rgb(12, 12, 12);
+  border: none;
+  transition: transform 0.2s ease-in;
+}
+
+.home button:hover {
+  transform: scale(1.2);
+  box-shadow: 9px 15px 40px rgb(12, 12, 12);
+  background-color: #f7f7f7;
+  color: black;
+}
+
+.button1 {
+  
+  display: block;
+  background-color: #352f5e;
+  color: #f7f7f7;
+  cursor: pointer;
+  grid-column: 9/11;
+  grid-row: 9/10;
+}
+.button1 a:visited {
+  color: #333;
+  text-decoration: none;
+}
+
+
+.button2 {
+  display: block;
+  background-color: #ffea05;
+  color: black;
+  cursor: pointer;
+  grid-column: 11/13;
+  grid-row: 9/10;
+}
+.button2 a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+
+
+/* about.html CSS */
+.headphones {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows:  2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  
+  background-image: url("https://cdn.glitch.com/27f86ec2-5997-4dd8-80cd-b47451f12b85%2Fmalte-wingen-PDX_a_82obo-unsplash.jpg?v=1573853167881");
+  background-position: center;
+  background-size: cover;
+  z-index: -2;
+  margin: 0;
+}
+.headphones div:nth-child(1) {
+  transform: scale(0.5);
+  opacity: 0;
+  background-image: url("https://cdn.glitch.com/27f86ec2-5997-4dd8-80cd-b47451f12b85%2FIMG_1609.jpg?v=1572845969278");
+  background-position: center;
+  background-size: cover;
+  grid-column: 2/5;
+  grid-row: 2/8;
+}
+.headphones div:nth-child(2) {
+  transform: scale(0.5);
+  opacity: 0;
+  background-image: url("https://cdn.glitch.com/27f86ec2-5997-4dd8-80cd-b47451f12b85%2FIMG_1603.jpg?v=1572845969552");
+  background-position: center;
+  background-size: cover;
+  grid-column: 5/8;
+  grid-row: 3/9;
+}
+.headphones div:nth-child(3) {
+  transform: scale(0.5);
+  opacity: 0;
+  background-image: url("https://cdn.glitch.com/27f86ec2-5997-4dd8-80cd-b47451f12b85%2FIMG_1612_2.jpg?v=1572845969036");
+  background-position: center;
+  background-size: cover;
+  grid-column: 8/11;
+  grid-row: 2/8;
+}
+.headphones div:nth-child(4) {
+  transform: scale(0.5);
+  opacity: 0;
+  background-image: url("https://cdn.glitch.com/27f86ec2-5997-4dd8-80cd-b47451f12b85%2FIMG_1593_2.jpg?v=1572845970221");
+  background-position: center;
+  background-size: cover;
+  grid-column: 11/14;
+  grid-row: 3/9;
+}
+.headphones div:nth-child(5) {
+  transform: scale(0.5);
+  opacity: 0;
+  background-image: url("https://cdn.glitch.com/27f86ec2-5997-4dd8-80cd-b47451f12b85%2FIMG_1608.jpg?v=1572845970623");
+  background-position: center;
+  background-size: cover;
+  grid-column: 2/5;
+  grid-row: 8/14;
+}
+.headphones div:nth-child(6) {
+  transform: scale(0.5);
+  opacity: 0;
+  background-image: url("https://cdn.glitch.com/27f86ec2-5997-4dd8-80cd-b47451f12b85%2FIMG_1610.jpg?v=1572845969970");
+  background-position: center;
+  background-size: cover;
+  grid-column: 5/8;
+  grid-row: 9/15;
+}
+.headphones div:nth-child(7) {
+  transform: scale(0.5);
+  opacity: 0;
+  background-image: url("https://cdn.glitch.com/27f86ec2-5997-4dd8-80cd-b47451f12b85%2FIMG_1596.jpg?v=1572845970456");
+  background-position: center;
+  background-size: cover;
+  grid-column: 8/11;
+  grid-row: 8/14;
+}
+.headphones div:nth-child(8) {
+  transform: scale(0.5);
+  opacity: 0;
+  background-image: url("https://cdn.glitch.com/27f86ec2-5997-4dd8-80cd-b47451f12b85%2FIMG_1598.jpg?v=1572845969601");
+  background-position: center;
+  background-size: cover;
+  grid-column: 11/14;
+  grid-row: 9/15;
+}
+
+.headphones div p {
+  display: block;
+  color: #f7f7f7;
+  margin-top: 80%;
+  text-align: center;
+  font-size: 2em;
+  background-color: #352f5e;
+  padding: 5px 10px 5px 10px;
+}
+
+@keyframes photosFadeOut{
+  from{
+    transform: scale(1);
+    opacity: 1;
+    
+  }
+  to{
+    transform: scale(0.5);
+    opacity: 0;
+    
+  }
+}
+
+
+.about {
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  background-image: linear-gradient(to bottom right, #3c344d,  #ffea05);
+  position: absolute;
+  width: 100%;
+  height: 95vh;
+  margin-top: 0;
+  z-index: -1;
+}
+
+
+
+#about-box {
+  margin: 15px;
+  padding: 20px;
+  padding-left: 60px;
+  font-family: 'Cuprum';
+  border: 5px #17161a;
+  box-shadow: 8px 8px 20px #17161a;
+  background-color: #352f5e;
+  background-position: center;
+  background-size: cover;
+  
+  flex: 2;
+  color: #f7f7f7;
+}
+
+#about-box h1{
+  text-align: center;
+  text-transform: uppercase;
+}
+#about-img {
+  margin: 15px;
+  background-image: url("https://cdn.glitch.com/27f86ec2-5997-4dd8-80cd-b47451f12b85%2Fomid-armin-0cbLoqUyz28-unsplash.jpg?v=1574056562442");
+  background-position: center;
+  background-size: cover;
+  flex: 1;
+  box-shadow: 8px 8px 20px #17161a;
+}
+
+/*experience.html CSS*/
+.experience {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows:  2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: .5em;
+    
+  background-image: url("https://cdn.glitch.com/27f86ec2-5997-4dd8-80cd-b47451f12b85%2Fjj-ying-7JX0-bfiuxQ-unsplash.jpg?v=1574114934683");
+  background-position: center;
+  background-size: cover;
+  z-index: -2;
+}
+
+.box1 {
+  box-sizing: border-box;
+  background-color: #352f5e;
+  /*background-image: url("");
+  background-position: center;
+  background-size: cover;*/
+  box-shadow: 5px 5px 20px #333;
+  grid-column: 2/5;
+  grid-row: 2/8;
+  opacity: 0;
+  position: relative;
+}
+
+.box1 a img {
+  display: block;
+  
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 250px;
+  max-width: 220px;
+  
+}
+
+
+.box1 a {
+  display: block;
+}
+
+.box-title {
+  position: relative;
+  text-align: center;
+  
+}
+
+
+.box2 {
+  opacity: 0;
+  background-color: #352f5e;
+  color: #333;
+  box-shadow: 5px 5px 20px #333;
+  grid-column: 5/10;
+  grid-row: 2/7;
+}
+.glitch-embed-wrap {
+  height: 100%;
+  
+}
+
+.box3 {
+  opacity: 0;
+  background-color: #352f5e;
+  
+  box-shadow: 5px 5px 20px #333;
+  grid-area: box3;
+  grid-column: 10/13;
+  grid-row: 2/7;
+  
+}
+.youtube {
+  max-height: 200px;
+  height: 100%;
+  width: 100%;
+}
+
+.box4 {
+  opacity: 0;
+  background-color: grey;
+  box-shadow: 5px 5px 20px #333;
+  grid-area: box4;
+  grid-column: 2/6;
+  grid-row: 9/12;
+}
+.soundcloud {
+  width: 100%;
+  height: 100%;
+}
+
+.box5 {
+  opacity: 0;
+  background-image: url("https://cdn.glitch.com/27f86ec2-5997-4dd8-80cd-b47451f12b85%2Fbuttons-3634501_1280.png?v=1574225110415");
+  background-position: center;
+  background-size: 150%;
+  background-color: #ffea05;
+  box-shadow: 5px 5px 20px #333;
+  grid-area: box5;
+  grid-column: 6/10;
+  grid-row: 7/12;
+  display: flex;
+  flex-direction: column;
+ 
+}
+.box5 h2 {
+  color: #333;
+  text-align: center;
+  
+  margin: 0;
+}
+.box5 button {
+  display: block;
+  position: relative;
+  align-content: center;
+  font-family: 'Ubuntu';
+  text-decoration: bold; 
+  font-size: 1.2em;
+  padding: 10px 20px 10px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  
+  box-shadow: 5px 9px 15px rgb(12, 12, 12);
+  border: none;
+  transition: 0.4s ease-in-out;
+  background-color: #ffea05;
+  cursor: pointer;
+ 
+}
+.butt1:hover {
+  border-top: 3px solid #352f5e;
+  transform: scale(1.1);
+  border-radius: 30px;
+}
+.butt2:hover {
+  color: #ffea05;
+  background: none;
+  border: 3px solid #ffea05;
+}
+.butt3:hover {
+  scale: 1.2;
+  color: #faf6f6;
+  background-color: #352f5e;
+  border: 3px solid #030303;
+}
+.butt4:hover {
+  padding: 5px 50px 5px 50px;
+  border-top: 5px solid #352f5e;
+}
+
+.box6 {
+  opacity: 0;
+  background-color: #352f5e;
+  box-shadow: 5px 5px 20px #333;
+  grid-area: box6;
+  grid-column: 10/13;
+  grid-row: 8/12;
+  
+}
+.linkedin-logo {
+  display: block;
+  fill:  #0e76a8;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 150px;
+  max-width: 220px;
+}
+
+@keyframes boxFadeIn{
+  from{
+    
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to{
+    
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/*blog.html css*/
+
+.blog-page {
+  height: 110vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows:  2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: .5em;
+    
+  background-image: url("https://cdn.glitch.com/27f86ec2-5997-4dd8-80cd-b47451f12b85%2Fdylan-nolte-qpZlQ8IIghI-unsplash.jpg?v=1574225111778");
+  background-position: center;
+  background-size: cover;
+  z-index: -2;
+}
+
+.blog {
+  display: block;
+  background-color: #272331;
+  box-shadow: 5px 5px 20px #333;
+  padding: 10px;
+  grid-column: 2/10;
+  grid-row: 2/14;
+  color: #f7f7f7;
+  font-family: 'Calistoga';
+  text-indent: 35px;
+  font-size: .9em;
+  line-height: 2em;
+}
+
+.blog h2 {
+  font-family: 'Calistoga';
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.twitter {
+  grid-column: 11/14;
+  grid-row: 2/14;
+  
+}
